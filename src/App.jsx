@@ -23,14 +23,14 @@ function App() {
   
   return (
     <Contenedor>
-      <Imagen src={Image} alt='imagenes criptos'/>
-      <div>
+      <Div>
       <Heading>Cotiza criptomonedas al instante</Heading>
       <Formulario
       setMonedas={setMonedas}
       />
       {resultado.PRICE && <Resultado resultado={resultado}/>}
-      </div>
+      </Div>
+      <Imagen src={Image} alt='imagenes criptos'/>
     </Contenedor>
   )
 }
@@ -38,13 +38,16 @@ export default App
 
 //------------ESTILOS------------//
 
+const Div = styled.div`
+  max-width:500px;
+  width:100%;
+`
+
 const Heading = styled.h1`
   font-family:'Lat', sans-serif;
   color: #FFF;
   text-align:center;
   font-weight: 700;
-  margin-top: 80px;
-  margin-bottom: 25px;
   font-size: 26px;
   &::after{
     content: '';
@@ -56,9 +59,9 @@ const Heading = styled.h1`
   }
 `
 const Contenedor = styled.div`
-  max-width:900px;
-  margin: 0 auto;
-  width:90%;
+
+  width:70%;
+  margin: 100px auto;
   @media (min-width: 992px){
     display:grid;
     grid-template-columns: repeat(2,1fr);
@@ -67,10 +70,8 @@ const Contenedor = styled.div`
 `
 
 const Imagen = styled.img`
-  max-width:400px;
-  width:80%;
-  margin:100px auto 0 auto;
-  display: block
+  max-width:500px;
+  width:100%;
 `
 
 
